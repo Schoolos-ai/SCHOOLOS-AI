@@ -1,0 +1,333 @@
+package com.example.model
+
+import androidx.compose.ui.graphics.Color
+import com.example.ui.theme.RoleAdminColor
+import com.example.ui.theme.RoleParentColor
+import com.example.ui.theme.RolePrincipalColor
+import com.example.ui.theme.RoleRegionalColor
+import com.example.ui.theme.RoleStudentColor
+import com.example.ui.theme.RoleTeacherColor
+
+data class RoleStat(
+    val label: String,
+    val value: String,
+    val note: String
+)
+
+enum class Role(
+    val key: String,
+    val label: String,
+    val glyph: String,
+    val greeting: String,
+    val context: String,
+    val tagline: String,
+    val accentColor: Color,
+    val stats: List<RoleStat>,
+    val features: List<String>
+) {
+    STUDENT(
+        key = "student",
+        label = "Student",
+        glyph = "S",
+        greeting = "Good morning, Aanya",
+        context = "Class 8 - Section A (sample)",
+        tagline = "LEARN · PRACTICE · SUCCEED",
+        accentColor = RoleStudentColor,
+        stats = listOf(
+            RoleStat("Learning items", "4", "Sample resources"),
+            RoleStat("Study goal", "35 min", "Today's focus"),
+            RoleStat("Attendance", "96%", "Sample term")
+        ),
+        features = listOf(
+            "Overview",
+            "Exam Readiness",
+            "Student Achievement Passport",
+            "Adaptive Worksheet Studio",
+            "School Knowledge Brain",
+            "School Requests",
+            "AI Lost-and-Found",
+            "School Resource Manager",
+            "Project Lab & Research Journal",
+            "Emergency Communications",
+            "Study Recovery Planner",
+            "Green Campus",
+            "Parent Communication Translator",
+            "AI Command Centre",
+            "SchoolOS Command Centre",
+            "AI Chat Assistant",
+            "AI Analytics",
+            "Calendar",
+            "Forms",
+            "Meetings",
+            "Portal analytics",
+            "Online classes",
+            "My Marks",
+            "Certificates & Letters",
+            "AI Study Tutor",
+            "AI Study Notes & Flashcards",
+            "AI Timetable",
+            "Learning materials & Quizzes",
+            "Learning games",
+            "Homework & Assignments",
+            "My Attendance",
+            "Study Clock & Goals",
+            "Leaderboard",
+            "Ask a teacher",
+            "Complaints",
+            "Account security",
+            "Profile & photo"
+        )
+    ),
+
+    PARENT(
+        key = "parent",
+        label = "Parent",
+        glyph = "P",
+        greeting = "Welcome, Priya",
+        context = "Family sample account",
+        tagline = "ENGAGE · MONITOR · SUPPORT",
+        accentColor = RoleParentColor,
+        stats = listOf(
+            RoleStat("Learner progress", "On track", "Sample overview"),
+            RoleStat("Attendance", "96%", "This term"),
+            RoleStat("Updates", "3", "Sample notices")
+        ),
+        features = listOf(
+            "Overview",
+            "Exam Readiness",
+            "Student Achievement Passport",
+            "School Knowledge Brain",
+            "School Requests",
+            "AI Lost-and-Found",
+            "School Resource Manager",
+            "Emergency Communications",
+            "Study Recovery Planner",
+            "Green Campus",
+            "Parent Communication Translator",
+            "AI Command Centre",
+            "SchoolOS Command Centre",
+            "Calendar",
+            "Forms",
+            "Meetings",
+            "Portal analytics",
+            "Linked learners",
+            "Online classes",
+            "Child Marks",
+            "Performance & progress",
+            "Child Attendance",
+            "Homework & Curriculum",
+            "Learning materials",
+            "AI Parenting & Study Tips",
+            "Leaderboard",
+            "Messages",
+            "Complaints",
+            "Account security",
+            "Profile & photo"
+        )
+    ),
+
+    TEACHER(
+        key = "teacher",
+        label = "Teacher",
+        glyph = "T",
+        greeting = "Good morning, Meera",
+        context = "Green Valley School - Mathematics (sample)",
+        tagline = "TEACH · ASSESS · COLLABORATE",
+        accentColor = RoleTeacherColor,
+        stats = listOf(
+            RoleStat("Today's classes", "4", "Sample timetable"),
+            RoleStat("Assignments", "12", "Sample tasks"),
+            RoleStat("Questions", "3", "Demo queue")
+        ),
+        features = listOf(
+            "Overview",
+            "Exam Readiness",
+            "Student Achievement Passport",
+            "Adaptive Worksheet Studio",
+            "School Knowledge Brain",
+            "Smart Timetable Optimizer",
+            "School Requests",
+            "AI Lost-and-Found",
+            "School Resource Manager",
+            "Project Lab & Research Journal",
+            "Emergency Communications",
+            "Study Recovery Planner",
+            "Green Campus",
+            "Parent Communication Translator",
+            "AI Command Centre",
+            "SchoolOS Command Centre",
+            "Calendar",
+            "Forms",
+            "Meetings",
+            "Portal analytics",
+            "Live classes",
+            "Marks & Exams",
+            "AI Quiz Generator",
+            "Class Attendance",
+            "Homework & Assignments",
+            "Learning materials",
+            "Upload resources",
+            "Notices",
+            "Leaderboard",
+            "Questions",
+            "Complaints",
+            "Account security",
+            "Profile & photo"
+        )
+    ),
+
+    PRINCIPAL(
+        key = "principal",
+        label = "Principal",
+        glyph = "Pr",
+        greeting = "Welcome, Principal",
+        context = "Green Valley School - Demo campus",
+        tagline = "LEAD · EMPOWER · ELEVATE",
+        accentColor = RolePrincipalColor,
+        stats = listOf(
+            RoleStat("Learners", "486", "Sample school"),
+            RoleStat("Teaching staff", "32", "Sample directory"),
+            RoleStat("Attendance", "94%", "Fictional today")
+        ),
+        features = listOf(
+            "Overview",
+            "Exam Readiness",
+            "Student Achievement Passport",
+            "Adaptive Worksheet Studio",
+            "School Knowledge Brain",
+            "Smart Timetable Optimizer",
+            "School Requests",
+            "AI Lost-and-Found",
+            "School Resource Manager",
+            "Project Lab & Research Journal",
+            "Emergency Communications",
+            "Study Recovery Planner",
+            "Green Campus",
+            "Parent Communication Translator",
+            "AI Command Centre",
+            "SchoolOS Command Centre",
+            "Live classes",
+            "Mobile app & branding",
+            "Calendar",
+            "Forms",
+            "Meetings",
+            "Portal analytics",
+            "Excel Bulk Onboarding",
+            "Staff & Teachers",
+            "Students & Parents",
+            "Class & Section",
+            "Teaching assignments",
+            "Marks & Exams",
+            "Attendance Register",
+            "Learning materials",
+            "School",
+            "Notices",
+            "Mailbox",
+            "Email Centre",
+            "Questions",
+            "Complaints",
+            "Account security",
+            "Profile & photo",
+            "Portal Guide"
+        )
+    ),
+
+    REGIONAL(
+        key = "regional",
+        label = "Regional Office",
+        glyph = "R",
+        greeting = "Regional overview",
+        context = "North Region - Demo data",
+        tagline = "OVERSIGHT · COORDINATION · EQUITY",
+        accentColor = RoleRegionalColor,
+        stats = listOf(
+            RoleStat("Schools", "18", "Sample region"),
+            RoleStat("Learners", "8,420", "Fictional total"),
+            RoleStat("Review queue", "5", "Demo requests")
+        ),
+        features = listOf(
+            "Overview",
+            "AI Command Centre",
+            "SchoolOS Command Centre",
+            "School Knowledge Brain",
+            "Regional Command Centre",
+            "Regional schools",
+            "Portal analytics",
+            "Calendar",
+            "Meetings",
+            "Notices",
+            "Portal Guide"
+        )
+    ),
+
+    ADMIN(
+        key = "admin",
+        label = "Administrator",
+        glyph = "A",
+        greeting = "Platform overview",
+        context = "SchoolOS AI - Demo workspace",
+        tagline = "GOVERN · SECURE · INNOVATE",
+        accentColor = RoleAdminColor,
+        stats = listOf(
+            RoleStat("Schools", "24", "Sample platform"),
+            RoleStat("Accounts", "12.4k", "Illustrative only"),
+            RoleStat("Security", "Protected", "Demo status")
+        ),
+        features = listOf(
+            "Overview",
+            "AI & Smart Features",
+            "Security Centre",
+            "Certificate & Letter Management",
+            "SchoolOS Command Centre",
+            "Exam Readiness",
+            "Student Achievement Passport",
+            "Adaptive Worksheet Studio",
+            "School Knowledge Brain",
+            "Smart Timetable Optimizer",
+            "School Requests",
+            "AI Lost-and-Found",
+            "School Resource Manager",
+            "Project Lab & Research Journal",
+            "Emergency Communications",
+            "Parent Communication Translator",
+            "Study Recovery Planner",
+            "Green Campus",
+            "Trust & Security Centre",
+            "Auto Admin Mode",
+            "AI Command Centre",
+            "Live classes",
+            "AI Alert Sound Manager",
+            "Feature Control",
+            "Portal feature manager",
+            "Calendar",
+            "Forms",
+            "Meetings",
+            "Portal analytics",
+            "Help requests",
+            "Website Content & CMS",
+            "Mobile app & branding",
+            "AI & API Management",
+            "AI Website Manager",
+            "Database connections",
+            "Email & password audit",
+            "Mailbox",
+            "Email Centre",
+            "Excel Bulk Onboarding",
+            "School registrations",
+            "All Schools",
+            "Accounts",
+            "Leaderboard",
+            "Notices",
+            "Complaints",
+            "Appearance",
+            "Account security",
+            "Profile & photo",
+            "Portal Guide"
+        )
+    );
+
+    companion object {
+        val activePortals: List<Role> = listOf(STUDENT, PARENT)
+        fun fromKey(key: String): Role? = entries.find { it.key.equals(key, ignoreCase = true) }
+    }
+}

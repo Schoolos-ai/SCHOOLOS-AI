@@ -1,0 +1,7 @@
+{
+  "name": "SchoolOS AI Explorer",
+  "description": "Interactive mobile product tour of SchoolOS AI portals with fictional sample data and safe local demo interactions. No sign-in required.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

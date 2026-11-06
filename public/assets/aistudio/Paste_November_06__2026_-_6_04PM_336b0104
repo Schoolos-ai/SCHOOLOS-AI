@@ -1,0 +1,527 @@
+Create a complete, polished, native Android application called "SchoolOS AI
+Explorer" using Kotlin and Jetpack Compose. This is a standalone, installable
+product-tour app based on the attached
+MOBILE-PORTAL-EXPLORER-CODING-AGENT-PROMPT.txt specification.
+
+Before coding:
+1. Read the attached specification and treat its "ROLES AND REQUIRED PORTAL
+   FEATURES", "DESIGN AND USABILITY", "DATA, PRIVACY AND SECURITY
+   REQUIREMENTS", and "ACCEPTANCE CHECKLIST" as requirements, not suggestions.
+2. Make an implementation checklist from those requirements. Preserve every
+   listed feature for all six roles. Do not silently skip long or similar
+   feature lists.
+3. If this file was not attached or cannot be read, stop and ask for it. Do not
+   invent a shorter feature catalog or claim complete coverage.
+4. Confirm you are creating a native Android app in Kotlin/Jetpack Compose,
+   not a website-only mockup. Use current stable Android libraries already
+   available in the project; keep dependencies minimal and explain each new
+   dependency.
+
+PRODUCT AND SAFETY BOUNDARIES
+- This app is a SAMPLE / DEMO product tour. It is not the authenticated
+  SchoolOS production app and is not a way to enter school records.
+- Open directly into demo mode. Never ask for a real email, username, school
+  ID, password, OTP, passkey, Google sign-in or other credential.
+- Never create a login bypass, fake SchoolOS session, account, API token or
+  authenticated request. Never call SchoolOS production or staging APIs.
+- Use only clearly fictional, locally defined sample data. Do not use any
+  real account, school, student, contact, attendance, mark, message, address
+  or upload from the host project.
+- Do not add analytics, ads, tracking, remote configuration, cloud sync,
+  Firebase authentication, Gmail access, or network calls. Do not request
+  camera, microphone, contacts, location, storage, notification or other
+  Android permissions unless a requirement truly needs it; this demo does
+  not need these permissions.
+- Every action that looks like it sends, saves, approves, pays, enrolls,
+  uploads or changes something must remain local to the demo. Show a clear
+  "Demo only - not submitted" message and provide a reset control.
+- Identify the app and each relevant screen as SAMPLE / DEMO. Do not imply
+  that demo data or simulated results are real or official.
+- Never put passwords, API keys, environment values, signing secrets or a
+  keystore into source code, generated assets, prompts or app preferences.
+
+REQUIRED APP EXPERIENCE
+- Build a welcoming, mobile-first app with a polished SchoolOS green visual
+  identity, readable type, accessible contrast, comfortable touch targets,
+  TalkBack-friendly labels, keyboard/focus support where applicable, and
+  responsive phone/tablet layouts. Avoid horizontal overflow.
+- First screen: "Explore SchoolOS - no sign-in required", an always-visible
+  fictional-data disclaimer, and six prominent role cards: Administrator,
+  Regional Office, Principal, Teacher, Student and Parent.
+- Each role has a fictional home/dashboard, a role switcher, searchable and
+  categorized navigation, feature counts/progress, and a distinct useful
+  sample screen for every feature assigned to that role in the attached
+  specification. No feature may be a dead menu item or a generic blank page.
+- Provide realistic fictional dashboards, sample forms, messages, schedules,
+  records, lists, cards and relevant controls. All edits, filters, quiz
+  answers and workflow state are local-only and visibly identified as demo
+  actions.
+- Include About / Safety information explaining that real AI, email, payments,
+  attendance hardware, live classes, camera features, cloud services and
+  school integrations are not connected in this demo.
+- Provide clear back navigation, Android system-back behavior, an obvious
+  return-to-portal action, and a "Reset demo" action that clears all local
+  sample changes and returns to the first screen.
+- Support system theme or an in-app light/dark appearance preference if it
+  can be done without introducing unnecessary permissions or dependencies.
+
+FEATURE COMPLETENESS
+- Use the full role and feature catalog in the attached specification as the
+  single source of truth. Keep the role-to-feature catalog centralized in
+  typed Kotlin data rather than duplicating lists across screens.
+- Verify programmatically or with tests that every specified role-feature
+  pair appears in navigation and opens a relevant preview.
+- Include all 15 Administrator AI & Smart Features modules in their own
+  navigable previews, as specified by the attached file.
+- Each preview must explain its purpose using role-appropriate wording and
+  show plausible fictional sample data and at least one safe local demo
+  interaction. Do not just display the feature name and a paragraph.
+- Keep any simulated AI suggestions deterministic and explicitly marked
+  "Sample output - not live AI". Never send demo inputs to an AI service.
+- Store optional demo state on-device only. Do not sync it, include personal
+  data, or treat it as a production database.
+
+ANDROID PROJECT AND QUALITY
+- Use a clear package/application ID. Default to `com.schoolos.explorer` for
+  this separate demo app. Do not use `com.schoolos.app` unless the owner
+  explicitly confirms this APK is intended to update that existing app and
+  can provide its matching signing identity through the secure build system.
+- Set the app display name to "SchoolOS AI Explorer". Add a launcher icon
+  that uses original, simple SchoolOS-inspired shapes; do not copy third-party
+  logos or assets.
+- Support the project's configured minimum Android version and current
+  target SDK. Do not lower SDK/permission security to make a build pass.
+- Use a maintainable structure (Compose screens/components, centralized
+  sample catalog/state, and navigation). Keep UI state lifecycle-safe.
+- Add focused tests for role selection/switching, full role-feature coverage,
+  sample interactions, demo reset, navigation/back behavior, and the absence
+  of real sign-in/network behavior.
+- Run formatting, unit tests, and a debug Android build. Report the exact
+  commands and outcomes. Fix build/test failures caused by your changes.
+- Do not claim the release APK is signed, safe to distribute, compatible with
+  an existing installation, or published to SchoolOS unless that has actually
+  been verified. A generated project or emulator preview is not an APK.
+
+DELIVERABLES
+- A complete Android Studio/Gradle project with source and focused tests.
+- A concise README with prerequisites, how to build/run the demo, package ID,
+  demo/privacy boundaries, test commands, and a clear statement that all
+  sample data/actions are local and fictional.
+- A final report listing role-feature coverage, exact verification results,
+  build/signing status, known limitations, and whether a distributable APK
+  was actually produced. Never claim an upload or email happened unless it
+  was performed and confirmed.
+
+Implement the application, not just a plan or screenshot. If a requirement
+cannot be implemented or verified in Google AI Studio, identify it precisely
+and leave the project in a buildable state rather than simulating success.
+
+
+APPENDIX A - COMPLETE SINGLE-FILE WEB STARTER (HTML + CSS + JAVASCRIPT)
+=====================================================================
+
+The following is a complete, dependency-free web prototype. It can be copied
+into a file named index.html and opened in a modern browser. It is included as
+working starter code for the coding agent, not as a substitute for integrating
+and testing the final app in the target repository. Keep all data fictional.
+The prototype makes no network requests and does not collect credentials.
+
+If you implement a native/mobile project instead of a web app, preserve the
+same role list, feature coverage, sample-only behavior and safety guarantees.
+
+----- BEGIN index.html -----
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#155f46">
+  <meta name="description" content="Explore SchoolOS portals with fictional sample data. No sign-in required.">
+  <title>SchoolOS Portal Explorer - Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --green: #176b4d;
+      --green-dark: #10533b;
+      --green-soft: #e7f3ed;
+      --ink: #17201d;
+      --muted: #68766e;
+      --line: #e6ebe7;
+      --surface: #fff;
+      --soft: #f5f7f6;
+      --warning: #fff7df;
+      --shadow: 0 12px 32px rgb(24 38 31 / 7%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px; min-height: 100vh; margin: 0; background: var(--soft);
+      color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 3px solid #75bf91; outline-offset: 2px;
+    }
+    .shell { width: min(1180px, 100%); margin: auto; padding: 18px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 850; }
+    .brand-mark {
+      display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px;
+      background: var(--green); color: white; font-size: 20px;
+    }
+    .brand small { display: block; color: var(--muted); font-size: 9px; letter-spacing: 1.3px; }
+    .button {
+      min-height: 42px; padding: 9px 14px; border: 1px solid transparent; border-radius: 10px;
+      background: var(--green); color: white; font-weight: 750; cursor: pointer;
+    }
+    .button:hover { background: var(--green-dark); }
+    .button.secondary { border-color: var(--line); background: white; color: var(--ink); }
+    .intro { max-width: 760px; padding: 38px 0 24px; }
+    .eyebrow { color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: 1.3px; }
+    h1 { margin: 8px 0; font-size: clamp(32px, 6vw, 54px); line-height: 1.05; letter-spacing: -1.8px; }
+    .intro p { max-width: 650px; color: var(--muted); }
+    .demo-banner {
+      margin: 14px 0; padding: 11px 13px; border: 1px solid #f0dfa4; border-radius: 11px;
+      background: var(--warning); color: #65521b; font-size: 12px;
+    }
+    .role-list { display: flex; gap: 8px; padding: 5px 1px 13px; overflow-x: auto; }
+    .role-button {
+      display: flex; flex: 0 0 auto; align-items: center; gap: 8px; min-height: 45px;
+      padding: 9px 12px; border: 1px solid var(--line); border-radius: 12px;
+      background: white; color: var(--ink); cursor: pointer;
+    }
+    .role-button[aria-pressed="true"] { border-color: #a9d2ba; background: var(--green-soft); color: var(--green); }
+    .role-button small { color: var(--muted); }
+    .workspace { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 14px; align-items: start; }
+    .panel { min-width: 0; padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); }
+    .panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .panel-heading h2 { margin: 2px 0 12px; font-size: 18px; }
+    .count {
+      display: grid; place-items: center; min-width: 30px; height: 30px; padding: 0 6px;
+      border-radius: 9px; background: var(--green-soft); color: var(--green); font-size: 11px; font-weight: 800;
+    }
+    .search { width: 100%; height: 42px; padding: 0 11px; border: 1px solid var(--line); border-radius: 10px; }
+    .feature-list { display: grid; gap: 4px; max-height: 62vh; margin-top: 10px; overflow-y: auto; }
+    .feature-button {
+      width: 100%; padding: 10px; border: 0; border-radius: 9px; background: transparent;
+      color: #526159; text-align: left; cursor: pointer;
+    }
+    .feature-button:hover, .feature-button[aria-current="page"] { background: var(--green-soft); color: var(--green); }
+    .preview-head { display: flex; justify-content: space-between; gap: 12px; }
+    .badge { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-size: 9px; font-weight: 850; letter-spacing: 1px; }
+    .badge::before { width: 7px; height: 7px; border-radius: 50%; background: #31a66b; content: ""; }
+    .preview-head h2 { margin: 8px 0 2px; font-size: clamp(21px, 4vw, 29px); letter-spacing: -.7px; }
+    .preview-head p { margin: 0; color: var(--muted); font-size: 12px; }
+    .role-glyph { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: var(--green-soft); color: var(--green); font-size: 20px; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 19px 0 12px; }
+    .stat { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fafbfa; }
+    .stat span, .stat small { display: block; overflow: hidden; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+    .stat strong { display: block; margin: 7px 0 2px; font-size: clamp(17px, 3vw, 23px); }
+    .feature-preview { padding: 15px; border: 1px solid var(--line); border-radius: 13px; }
+    .feature-preview h3 { margin: 0; font-size: 14px; }
+    .feature-preview p { color: var(--muted); font-size: 12px; }
+    .interaction { display: grid; gap: 8px; margin-top: 12px; }
+    .interaction button {
+      min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px;
+      background: white; text-align: left; cursor: pointer;
+    }
+    .interaction button:hover { border-color: #acd1b8; background: #f6fbf7; }
+    .feedback { min-height: 1.4em; color: var(--green); font-size: 11px; }
+    .safety { display: flex; gap: 10px; margin-top: 12px; padding: 12px; border-radius: 11px; background: #f5f8f6; }
+    .safety strong { font-size: 11px; }
+    .safety p { margin: 2px 0 0; color: var(--muted); font-size: 10px; }
+    footer { display: flex; justify-content: space-between; gap: 12px; padding: 16px 2px; color: var(--muted); font-size: 10px; }
+    @media (max-width: 740px) {
+      .shell { padding: 13px; }
+      .intro { padding: 29px 0 18px; }
+      .workspace { grid-template-columns: 1fr; }
+      .feature-list { grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 290px; }
+      .feature-button { min-height: 44px; border: 1px solid var(--line); font-size: 11px; }
+    }
+    @media (max-width: 420px) {
+      .shell { padding: 10px; }
+      .panel { padding: 13px; }
+      .stats { gap: 5px; }
+      .stat { padding: 9px 7px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .panel { animation: arrive .22s ease-out; }
+      @keyframes arrive { from { opacity: .65; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">S</span><span>SchoolOS AI<small>PORTAL EXPLORER</small></span></div>
+      <button class="button secondary" id="reset-demo" type="button">Reset demo</button>
+    </header>
+    <section class="intro">
+      <span class="eyebrow">MOBILE-FRIENDLY PRODUCT TOUR</span>
+      <h1>Explore every portal.<br>No sign-in needed.</h1>
+      <p>Choose a role, browse its features and try sample interactions. This tour uses fictional data and does not access a real school account.</p>
+    </section>
+    <p class="demo-banner"><strong>Sample mode:</strong> names, figures and activities are fictional. Nothing here is submitted to a school.</p>
+    <nav class="role-list" id="roles" aria-label="Choose a portal"></nav>
+    <section class="workspace" aria-label="Portal demonstration">
+      <aside class="panel">
+        <div class="panel-heading"><div><span class="eyebrow" id="role-label">STUDENT PORTAL</span><h2>Feature tour</h2></div><span class="count" id="feature-count">0</span></div>
+        <label><span class="eyebrow">SEARCH FEATURES</span><input class="search" id="search" type="search" placeholder="Type a feature name" autocomplete="off"></label>
+        <nav class="feature-list" id="features" aria-label="Portal features"></nav>
+      </aside>
+      <section class="panel" aria-live="polite">
+        <div class="preview-head">
+          <div><span class="badge">FICTIONAL SAMPLE PREVIEW</span><h2 id="screen-title">Overview</h2><p id="screen-subtitle"></p></div>
+          <span class="role-glyph" id="role-glyph" aria-hidden="true">S</span>
+        </div>
+        <div class="stats" id="stats"></div>
+        <article class="feature-preview">
+          <h3 id="preview-title">A quick look around</h3>
+          <p id="preview-description"></p>
+          <div class="interaction" id="interaction"></div>
+          <p class="feedback" id="feedback" role="status"></p>
+        </article>
+        <aside class="safety"><span aria-hidden="true">🛡</span><div><strong>Safe demo mode</strong><p>No credentials, live school APIs, real messages, uploads, camera, or database changes are used.</p></div></aside>
+      </section>
+    </section>
+    <footer><span id="footer-role"></span><span>Demo only - not an official school record.</span></footer>
+  </main>
+  <script>
+    "use strict";
+
+    const roles = {
+      student: {
+        label: "Student", glyph: "S", greeting: "Good morning, Aanya", context: "Class 8 - Section A (sample)",
+        stats: [["Learning items", "4", "Sample resources"], ["Study goal", "35 min", "Today's focus"], ["Attendance", "96%", "Sample term"]],
+        features: ["Overview","Exam Readiness","Student Achievement Passport","Adaptive Worksheet Studio","School Knowledge Brain","School Requests","AI Lost-and-Found","School Resource Manager","Project Lab & Research Journal","Emergency Communications","Study Recovery Planner","Green Campus","Parent Communication Translator","AI Command Centre","SchoolOS Command Centre","AI Chat Assistant","AI Analytics","Calendar","Forms","Meetings","Portal analytics","Online classes","My Marks","Certificates & Letters","AI Study Tutor","AI Study Notes & Flashcards","AI Timetable","Learning materials & Quizzes","Learning games","Homework & Assignments","My Attendance","Study Clock & Goals","Leaderboard","Ask a teacher","Complaints","Account security","Profile & photo"]
+      },
+      parent: {
+        label: "Parent", glyph: "P", greeting: "Welcome, Priya", context: "Family sample account",
+        stats: [["Learner progress", "On track", "Sample overview"], ["Attendance", "96%", "This term"], ["Updates", "3", "Sample notices"]],
+        features: ["Overview","Exam Readiness","Student Achievement Passport","School Knowledge Brain","School Requests","AI Lost-and-Found","School Resource Manager","Emergency Communications","Study Recovery Planner","Green Campus","Parent Communication Translator","AI Command Centre","SchoolOS Command Centre","Calendar","Forms","Meetings","Portal analytics","Linked learners","Online classes","Child Marks","Performance & progress","Child Attendance","Homework & Curriculum","Learning materials","AI Parenting & Study Tips","Leaderboard","Messages","Complaints","Account security","Profile & photo"]
+      },
+      teacher: {
+        label: "Teacher", glyph: "T", greeting: "Good morning, Meera", context: "Green Valley School - Mathematics (sample)",
+        stats: [["Today's classes", "4", "Sample timetable"], ["Assignments", "12", "Sample tasks"], ["Questions", "3", "Demo queue"]],
+        features: ["Overview","Exam Readiness","Student Achievement Passport","Adaptive Worksheet Studio","School Knowledge Brain","Smart Timetable Optimizer","School Requests","AI Lost-and-Found","School Resource Manager","Project Lab & Research Journal","Emergency Communications","Study Recovery Planner","Green Campus","Parent Communication Translator","AI Command Centre","SchoolOS Command Centre","Calendar","Forms","Meetings","Portal analytics","Live classes","Marks & Exams","AI Quiz Generator","Class Attendance","Homework & Assignments","Learning materials","Upload resources","Notices","Leaderboard","Questions","Complaints","Account security","Profile & photo"]
+      },
+      principal: {
+        label: "Principal", glyph: "Pr", greeting: "Welcome, Principal", context: "Green Valley School - Demo campus",
+        stats: [["Learners", "486", "Sample school"], ["Teaching staff", "32", "Sample directory"], ["Attendance", "94%", "Fictional today"]],
+        features: ["Overview","Exam Readiness","Student Achievement Passport","Adaptive Worksheet Studio","School Knowledge Brain","Smart Timetable Optimizer","School Requests","AI Lost-and-Found","School Resource Manager","Project Lab & Research Journal","Emergency Communications","Study Recovery Planner","Green Campus","Parent Communication Translator","AI Command Centre","SchoolOS Command Centre","Live classes","Mobile app & branding","Calendar","Forms","Meetings","Portal analytics","Excel Bulk Onboarding","Staff & Teachers","Students & Parents","Class & Section","Teaching assignments","Marks & Exams","Attendance Register","Learning materials","School","Notices","Mailbox","Email Centre","Questions","Complaints","Account security","Profile & photo","Portal Guide"]
+      },
+      regional: {
+        label: "Regional Office", glyph: "R", greeting: "Regional overview", context: "North Region - Demo data",
+        stats: [["Schools", "18", "Sample region"], ["Learners", "8,420", "Fictional total"], ["Review queue", "5", "Demo requests"]],
+        features: ["Overview","AI Command Centre","SchoolOS Command Centre","School Knowledge Brain","Regional Command Centre","Regional schools","Portal analytics","Calendar","Meetings","Notices","Portal Guide"]
+      },
+      admin: {
+        label: "Administrator", glyph: "A", greeting: "Platform overview", context: "SchoolOS AI - Demo workspace",
+        stats: [["Schools", "24", "Sample platform"], ["Accounts", "12.4k", "Illustrative only"], ["Security", "Protected", "Demo status"]],
+        features: ["Overview","AI & Smart Features","Security Centre","Certificate & Letter Management","SchoolOS Command Centre","Exam Readiness","Student Achievement Passport","Adaptive Worksheet Studio","School Knowledge Brain","Smart Timetable Optimizer","School Requests","AI Lost-and-Found","School Resource Manager","Project Lab & Research Journal","Emergency Communications","Parent Communication Translator","Study Recovery Planner","Green Campus","Trust & Security Centre","Auto Admin Mode","AI Command Centre","Live classes","AI Alert Sound Manager","Feature Control","Portal feature manager","Calendar","Forms","Meetings","Portal analytics","Help requests","Website Content & CMS","Mobile app & branding","AI & API Management","AI Website Manager","Database connections","Email & password audit","Mailbox","Email Centre","Excel Bulk Onboarding","School registrations","All Schools","Accounts","Leaderboard","Notices","Complaints","Appearance","Account security","Profile & photo","Portal Guide"]
+      }
+    };
+
+    const descriptions = {
+      "Overview": "A sample dashboard with useful updates and shortcuts for this role.",
+      "Exam Readiness": "Review fictional assessment evidence. Any readiness indicator is illustrative and is not a guaranteed result.",
+      "Student Achievement Passport": "Explore a sample achievement record and a human-review status.",
+      "Adaptive Worksheet Studio": "Preview a sample worksheet draft. Real AI generation is not connected in this demo.",
+      "School Knowledge Brain": "Search fictional sample notices and learning resources with example source labels.",
+      "Smart Timetable Optimizer": "Review a sample timetable suggestion and its example scheduling constraints.",
+      "School Requests": "Explore a fictional school request and its sample review status.",
+      "AI Lost-and-Found": "Compare fictional item descriptions. Suggested matches require human confirmation.",
+      "School Resource Manager": "Preview sample inventory counts and a simulated checkout/return.",
+      "Project Lab & Research Journal": "Open a fictional school project and its sample journal entries.",
+      "Emergency Communications": "Preview an in-app message draft. No SMS, email, or push delivery occurs.",
+      "Parent Communication Translator": "Preview a fictional school message and a clearly marked sample translation.",
+      "Study Recovery Planner": "Explore a non-punitive sample revision plan. It is not a diagnosis or promise.",
+      "Green Campus": "Review fictional, manually entered environmental observations. No sensors are connected.",
+      "Trust & Security Centre": "Preview sample security information. A demo status is not a security audit.",
+      "Security Centre": "Explore example account protection settings. No real security settings are changed.",
+      "Certificate & Letter Management": "Preview a sample document approval path. Nothing is officially issued.",
+      "AI Study Tutor": "Open a sample learning explanation. It is not a live AI response.",
+      "AI Study Notes & Flashcards": "Browse sample notes and flip-through flashcard previews.",
+      "AI Quiz Generator": "Preview a sample quiz. No AI provider is contacted.",
+      "Learning materials & Quizzes": "Browse fictional class resources and sample quiz cards.",
+      "Learning games": "Try a short sample activity without recording a real score.",
+      "Class Attendance": "Mark fictional attendance locally. No school register is changed.",
+      "Attendance Register": "Review a sample school attendance register.",
+      "My Attendance": "Review a fictional learner attendance summary.",
+      "Child Attendance": "Review sample attendance for a fictional linked learner.",
+      "My Marks": "Explore fictional assessment marks and sample teacher feedback.",
+      "Child Marks": "Review sample marks for a fictional linked learner.",
+      "Homework & Assignments": "Browse sample instructions and due dates.",
+      "Messages": "Read a fictional sample conversation. Sending is disabled.",
+      "Questions": "Review a sample student question and a demonstration reply.",
+      "Ask a teacher": "Compose a local sample question. It is not sent to a real teacher.",
+      "Complaints": "Preview a fictional concern lifecycle. Nothing is submitted.",
+      "Forms": "Preview a sample form and local-only response confirmation.",
+      "Calendar": "Explore fictional school dates, examinations and events.",
+      "Meetings": "Review a fictional meeting schedule. No call is started.",
+      "Live classes": "Preview a live-class information screen. Camera and microphone remain off.",
+      "Online classes": "Browse a fictional learner online-class schedule.",
+      "AI & Smart Features": "Open the administrator's sample hub for 15 smart-feature modules.",
+      "Feature Control": "Preview a role-feature availability matrix. No settings are saved.",
+      "Portal feature manager": "Preview role-specific custom pages without creating real pages.",
+      "AI & API Management": "View a sample provider-status panel. No API keys are requested or stored.",
+      "AI Website Manager": "Preview a proposed-change review screen. No project files are modified.",
+      "Database connections": "Preview an integration status screen. No connection is attempted.",
+      "Mailbox": "Browse fictional sample mail. No real mailbox is connected.",
+      "Email Centre": "Preview an unsent sample message. Email delivery is disabled.",
+      "Excel Bulk Onboarding": "Preview a fictional import summary. No accounts are created.",
+      "School registrations": "Review a fictional school registration sample.",
+      "All Schools": "Browse a sample school directory with fictional records.",
+      "Regional schools": "Browse fictional schools in a sample region.",
+      "Accounts": "Preview fictional account-management controls. No account is created or changed.",
+      "Mobile app & branding": "Preview sample app branding settings. No Android package is built.",
+      "Website Content & CMS": "Preview a sample public content editor. Nothing is published.",
+      "Appearance": "Try a local visual preview. No saved theme setting is changed.",
+      "Portal analytics": "Review illustrative summary figures, not live analytics.",
+      "Leaderboard": "Browse a fictional recognition ranking; no real scores are shown.",
+      "Profile & photo": "Preview a sample profile. No photo is uploaded.",
+      "Account security": "Explore general security guidance. No sign-in factors are enrolled."
+    };
+
+    const roleKeys = Object.keys(roles);
+    const roleNav = document.getElementById("roles");
+    const featureNav = document.getElementById("features");
+    const search = document.getElementById("search");
+    let selectedRole = "student";
+    let selectedFeature = "Overview";
+
+    function describe(feature) {
+      if (descriptions[feature]) return descriptions[feature];
+      const name = feature.toLowerCase();
+      if (name.includes("ai")) return `Explore sample ${feature} screens. AI output is not live in this offline demo.`;
+      if (name.includes("account") || name.includes("security")) return `Preview ${feature} using fictional data; no real account settings are changed.`;
+      if (name.includes("school") || name.includes("staff") || name.includes("student") || name.includes("class")) return `Browse a fictional ${feature.toLowerCase()} sample for this role.`;
+      if (name.includes("email") || name.includes("mail")) return `Preview ${feature} with sample content. No real email is sent or received.`;
+      return `Explore a fictional ${feature.toLowerCase()} workflow for the selected portal. Actions remain in demo mode.`;
+    }
+
+    function renderRoles() {
+      roleNav.replaceChildren();
+      roleKeys.forEach((key) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "role-button";
+        button.setAttribute("aria-pressed", String(key === selectedRole));
+        button.textContent = `${roles[key].glyph}  ${roles[key].label}  ${roles[key].features.length}`;
+        button.addEventListener("click", () => {
+          selectedRole = key;
+          selectedFeature = "Overview";
+          search.value = "";
+          render();
+        });
+        roleNav.append(button);
+      });
+    }
+
+    function renderFeatures() {
+      const currentRole = roles[selectedRole];
+      const term = search.value.trim().toLowerCase();
+      const matches = currentRole.features.filter((feature) => feature.toLowerCase().includes(term));
+      featureNav.replaceChildren();
+      document.getElementById("feature-count").textContent = String(currentRole.features.length);
+      document.getElementById("role-label").textContent = `${currentRole.label.toUpperCase()} PORTAL`;
+      matches.forEach((feature) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "feature-button";
+        button.textContent = feature;
+        if (feature === selectedFeature) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => {
+          selectedFeature = feature;
+          renderPreview();
+          renderFeatures();
+        });
+        featureNav.append(button);
+      });
+      if (!matches.length) {
+        const empty = document.createElement("p");
+        empty.textContent = "No features match this search.";
+        featureNav.append(empty);
+      }
+    }
+
+    function addAction(label, response) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = label;
+      button.addEventListener("click", () => {
+        document.getElementById("feedback").textContent = response;
+      });
+      document.getElementById("interaction").append(button);
+    }
+
+    function renderPreview() {
+      const currentRole = roles[selectedRole];
+      const isOverview = selectedFeature === "Overview";
+      document.getElementById("screen-title").textContent = isOverview ? currentRole.greeting : selectedFeature;
+      document.getElementById("screen-subtitle").textContent = currentRole.context;
+      document.getElementById("role-glyph").textContent = currentRole.glyph;
+      document.getElementById("footer-role").textContent = `Showing ${currentRole.label} portal sample - ${currentRole.features.length} features`;
+      document.getElementById("preview-title").textContent = isOverview ? "A quick look around" : "Feature sample";
+      document.getElementById("preview-description").textContent = isOverview
+        ? `This is a fictional ${currentRole.label.toLowerCase()} workspace. Select any feature to open its sample preview.`
+        : describe(selectedFeature);
+      document.getElementById("feedback").textContent = "";
+
+      const stats = document.getElementById("stats");
+      stats.replaceChildren();
+      currentRole.stats.forEach(([label, value, note]) => {
+        const card = document.createElement("article");
+        card.className = "stat";
+        const labelNode = document.createElement("span");
+        labelNode.textContent = label;
+        const valueNode = document.createElement("strong");
+        valueNode.textContent = value;
+        const noteNode = document.createElement("small");
+        noteNode.textContent = note;
+        card.append(labelNode, valueNode, noteNode);
+        stats.append(card);
+      });
+
+      const interaction = document.getElementById("interaction");
+      interaction.replaceChildren();
+      if (isOverview) {
+        addAction("Open a sample dashboard card", "Sample card opened. No account data was loaded.");
+        addAction("Explore this portal's first feature", "Choose a feature from the list to open its sample screen.");
+      } else if (/quiz|game|tutor|flashcard/i.test(selectedFeature)) {
+        addAction("Choose sample answer: Option A", "Demo answer recorded locally. No score was submitted.");
+        addAction("Show another sample", "Another fictional example is ready to explore.");
+      } else if (/attendance|marks|progress|analytics|readiness/i.test(selectedFeature)) {
+        addAction("Open sample record", "Fictional sample record opened. No real learner record was accessed.");
+        addAction("Filter sample view", "Sample view filtered locally; no school data was requested.");
+      } else if (/message|question|complaint|form|notice|emergency|email/i.test(selectedFeature)) {
+        addAction("Preview sample message", "Fictional message preview opened. Nothing was sent or submitted.");
+        addAction("Save as local demo draft", "Saved only in this page's temporary demo state.");
+      } else {
+        addAction("Open sample preview", "Sample preview opened. This demonstration does not save or send anything.");
+        addAction("Show sample details", "Details shown are fictional and remain on this device.");
+      }
+    }
+
+    function render() {
+      renderRoles();
+      renderFeatures();
+      renderPreview();
+    }
+
+    search.addEventListener("input", renderFeatures);
+    document.getElementById("reset-demo").addEventListener("click", () => {
+      selectedRole = "student";
+      selectedFeature = "Overview";
+      search.value = "";
+      render();
+      document.getElementById("feedback").textContent = "Demo reset. All sample screens are ready.";
+    });
+    render();
+  </script>
+</body>
+</html>
+
+----- END index.html -----

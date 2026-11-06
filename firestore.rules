@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // SchoolOS Live Configuration & Admin Controls
+    // Public read so students and parents see updates in real time
+    match /app_config/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    match /notices/{noticeId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    match /admin_logs/{logId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

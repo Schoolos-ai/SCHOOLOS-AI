@@ -1,0 +1,28 @@
+{
+  "$schema": "https://firebase.google.com/schemas/firestore/blueprint.json",
+  "collections": [
+    {
+      "name": "app_config",
+      "description": "Global dynamic configuration published by the school administrator",
+      "documents": [
+        {
+          "id": "live_settings",
+          "fields": {
+            "heroTitle": { "type": "string", "example": "SchoolOS AI Command Center" },
+            "heroSubtitle": { "type": "string", "example": "Real-time AI learning ecosystem live across campus" },
+            "broadcastAlert": { "type": "string", "example": "Mid-term AI assessment window is now active" },
+            "isAlertActive": { "type": "boolean", "example": true },
+            "activeLearners": { "type": "string", "example": "1,420+" },
+            "aiToolsCount": { "type": "string", "example": "50+ Smart Tools" },
+            "systemStatus": { "type": "string", "example": "Operational (99.98% uptime)" },
+            "parentNoticeTitle": { "type": "string", "example": "Term 2 Progress Reports Published" },
+            "parentNoticeBody": { "type": "string", "example": "Parents can review updated subject analytics and AI study tutor recommendations." },
+            "studentHighlight": { "type": "string", "example": "New AI Study Tutor & Notes generator ready!" },
+            "lastPublishedBy": { "type": "string", "example": "aliafzal73216@gmail.com" },
+            "lastPublishedTimestamp": { "type": "string", "example": "2026-11-06T14:45:00Z" }
+          }
+        }
+      ]
+    }
+  ]
+}
